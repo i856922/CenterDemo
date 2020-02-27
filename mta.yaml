@@ -1,0 +1,19 @@
+ID: CenterDemo
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: CenterDB
+   type: hdb
+   path: CenterDB
+   requires:
+    - name: hdi_CenterDB
+
+resources:
+ - name: hdi_CenterDB
+   parameters:
+      config:
+         schema: Center
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
